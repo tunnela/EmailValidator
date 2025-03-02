@@ -31,16 +31,22 @@ class MultipleValidationWithAnd implements EmailValidation
      * @var MultipleErrors|null
      */
     private $error;
+    
+    private array $validations;
+
+    private bool $mode;
 
     /**
      * @param EmailValidation[] $validations The validations.
      * @param int               $mode        The validation mode (one of the constants).
      */
-    public function __construct(private readonly array $validations, private readonly int $mode = self::ALLOW_ALL_ERRORS)
+    public function __construct(array $validations, int $mode = self::ALLOW_ALL_ERRORS)
     {
         if (count($validations) == 0) {
             throw new EmptyValidationList();
         }
+        $this->validations = $validations;
+        $this->mode = $mode;
     }
 
     /**

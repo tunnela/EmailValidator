@@ -4,12 +4,18 @@ namespace Egulias\EmailValidator\Validation;
 
 class DNSRecords
 {
+    private array $records;
+
+    private bool $error;
+    
     /**
      * @param list<array<array-key, mixed>> $records
      * @param bool $error
      */
-    public function __construct(private readonly array $records, private readonly bool $error = false)
+    public function __construct(array $records, bool $error = false)
     {
+        $this->records = $records;
+        $this->error = $error;
     }
 
     /**
