@@ -34,7 +34,7 @@ class MultipleValidationWithAnd implements EmailValidation
     
     private array $validations;
 
-    private bool $mode;
+    private int $mode;
 
     /**
      * @param EmailValidation[] $validations The validations.
