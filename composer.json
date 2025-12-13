@@ -14,7 +14,7 @@
   },
   "require": {
     "php": ">=7.4",
-    "doctrine/lexer": "^2.0 || ^3.0",
+    "doctrine/lexer": "dev-php7-support",
     "symfony/polyfill-intl-idn": "^1.26"
   },
   "require-dev": {
@@ -33,5 +33,11 @@
     "psr-4": {
       "Egulias\\EmailValidator\\Tests\\": "tests"
     }
-  }
+  },
+  "repositories": [
+    {
+      "url": "https://github.com/tunnela/lexer.git",
+      "type": "git"
+    }
+  ]
 }
